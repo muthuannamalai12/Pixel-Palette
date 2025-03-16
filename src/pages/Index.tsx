@@ -21,7 +21,7 @@ const Index = () => {
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && entry.target instanceof HTMLElement) {
           entry.target.classList.add('active');
         }
       });
@@ -35,8 +35,8 @@ const Index = () => {
       const lazyImages = document.querySelectorAll('img[loading="lazy"]');
       
       lazyImages.forEach((img) => {
-        const parent = img.parentNode;
-        if (parent) {
+        const parent = img.parentElement;
+        if (parent && parent instanceof HTMLElement) {
           parent.classList.add('lazy-image-container');
           img.classList.add('lazy-image-loading');
           
