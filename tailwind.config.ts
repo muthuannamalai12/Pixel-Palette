@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,6 +19,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ["Inter", "SF Pro Display", "system-ui", "sans-serif"],
+				display: ["Inter", "SF Pro Display", "system-ui", "sans-serif"],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -70,25 +75,63 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				fadeIn: {
+					'0%': { opacity: '0', transform: 'translateY(20px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				fadeOut: {
+					'0%': { opacity: '1', transform: 'translateY(0)' },
+					'100%': { opacity: '0', transform: 'translateY(20px)' }
+				},
+				slideIn: {
+					'0%': { transform: 'translateY(100px)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' }
+				},
+				textFocus: {
+					'0%': { filter: 'blur(12px)', opacity: '0' },
+					'100%': { filter: 'blur(0)', opacity: '1' }
+				},
+				'shimmer': {
+					'0%': { backgroundPosition: '-200% 0' },
+					'100%': { backgroundPosition: '200% 0' }
+				},
+				scaleIn: {
+					'0%': { transform: 'scale(0.9)', opacity: '0' },
+					'100%': { transform: 'scale(1)', opacity: '1' }
+				},
+				'pulse-gentle': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.8' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fadeIn 0.7s ease-out forwards',
+				'fade-out': 'fadeOut 0.7s ease-out forwards',
+				'slide-in': 'slideIn 0.8s ease-out forwards',
+				'text-focus': 'textFocus 1s cubic-bezier(0.11, 0, 0.5, 0) forwards',
+				'shimmer': 'shimmer 2s linear infinite',
+				'scale-in': 'scaleIn 0.7s ease-out forwards',
+				'pulse-gentle': 'pulse-gentle 3s ease-in-out infinite'
+			},
+			transitionTimingFunction: {
+				'expo-out': 'cubic-bezier(0.16, 1, 0.3, 1)',
+				'spring': 'cubic-bezier(0.37, 0, 0.63, 1)'
+			},
+			boxShadow: {
+				'glass': '0 8px 32px rgba(0, 0, 0, 0.04)',
+				'neu': '10px 10px 20px #e6e6e6, -10px -10px 20px #ffffff'
+			},
+			backdropBlur: {
+				'xs': '2px'
 			}
 		}
 	},
