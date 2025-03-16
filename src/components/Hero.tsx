@@ -1,3 +1,4 @@
+
 import { ArrowDown } from "lucide-react";
 import { useEffect, useRef } from "react";
 
@@ -69,20 +70,28 @@ const Hero = () => {
             className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 reveal"
             style={{ transitionDelay: "0.8s" }}
           >
-            <button 
-              onClick={() => scrollToSection('projects')} 
+            <a 
+              href="#projects" 
               className="button-primary px-8 py-3 rounded-full w-full sm:w-auto flex items-center justify-center space-x-2"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('projects');
+              }}
             >
               <span>View Our Work</span>
               <ArrowDown className="h-4 w-4 animate-bounce" />
-            </button>
-            <button 
-              onClick={() => scrollToSection('contact')} 
+            </a>
+            <a 
+              href="#contact" 
               className="button-secondary px-8 py-3 rounded-full w-full sm:w-auto flex items-center justify-center space-x-2"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('contact');
+              }}
             >
               <span>Get in Touch</span>
               <ArrowDown className="h-4 w-4 animate-bounce" />
-            </button>
+            </a>
           </div>
         </div>
       </div>

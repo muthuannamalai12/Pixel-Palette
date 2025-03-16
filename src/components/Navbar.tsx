@@ -35,6 +35,14 @@ const Navbar = () => {
     document.body.style.overflow = "auto";
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      closeMobileMenu();
+    }
+  };
+
   return (
     <>
       <header
@@ -47,7 +55,11 @@ const Navbar = () => {
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <a 
-            href="#" 
+            href="#home"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('home');
+            }} 
             className="text-xl font-medium tracking-tight text-black animate-fade-in"
             style={{ animationDelay: "0.1s" }}
           >
@@ -66,6 +78,10 @@ const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.href.substring(1));
+                }}
                 className="text-sm font-medium text-black/80 hover:text-black transition-colors link-hover animate-fade-in"
                 style={{ animationDelay: `${0.1 + index * 0.1}s` }}
               >
@@ -110,7 +126,10 @@ const Navbar = () => {
               key={item.name}
               href={item.href}
               className="text-xl font-light tracking-tight text-black hover:text-black/70 transition-colors"
-              onClick={closeMobileMenu}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(item.href.substring(1));
+              }}
               style={{
                 transitionDelay: isMobileMenuOpen ? `${index * 0.1}s` : "0s",
               }}
