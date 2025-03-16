@@ -1,4 +1,3 @@
-
 import { ArrowDown } from "lucide-react";
 import { useEffect, useRef } from "react";
 
@@ -86,16 +85,6 @@ const Hero = () => {
             </button>
           </div>
         </div>
-      </div>
-      
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-pulse-gentle">
-        <button 
-          onClick={() => scrollToSection('projects')}
-          className="text-sm font-medium text-black/60 mb-2 flex items-center space-x-2 hover:text-black transition-colors"
-        >
-          <span>Scroll Down</span>
-          <ArrowDown className="h-4 w-4" />
-        </button>
       </div>
     </section>
   );
