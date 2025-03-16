@@ -29,6 +29,13 @@ const Hero = () => {
     };
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section 
       id="home" 
@@ -63,25 +70,32 @@ const Hero = () => {
             className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 reveal"
             style={{ transitionDelay: "0.8s" }}
           >
-            <a 
-              href="#projects" 
-              className="button-primary px-8 py-3 rounded-full w-full sm:w-auto"
+            <button 
+              onClick={() => scrollToSection('projects')} 
+              className="button-primary px-8 py-3 rounded-full w-full sm:w-auto flex items-center justify-center space-x-2"
             >
-              View Our Work
-            </a>
-            <a 
-              href="#contact" 
-              className="button-secondary px-8 py-3 rounded-full w-full sm:w-auto"
+              <span>View Our Work</span>
+              <ArrowDown className="h-4 w-4 animate-bounce" />
+            </button>
+            <button 
+              onClick={() => scrollToSection('contact')} 
+              className="button-secondary px-8 py-3 rounded-full w-full sm:w-auto flex items-center justify-center space-x-2"
             >
-              Get in Touch
-            </a>
+              <span>Get in Touch</span>
+              <ArrowDown className="h-4 w-4 animate-bounce" />
+            </button>
           </div>
         </div>
       </div>
       
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-pulse-gentle">
-        <a href="#projects" className="text-sm font-medium text-black/60 mb-2">Scroll Down</a>
-        <ArrowDown className="h-4 w-4 text-black/60" />
+        <button 
+          onClick={() => scrollToSection('projects')}
+          className="text-sm font-medium text-black/60 mb-2 flex items-center space-x-2 hover:text-black transition-colors"
+        >
+          <span>Scroll Down</span>
+          <ArrowDown className="h-4 w-4" />
+        </button>
       </div>
     </section>
   );
