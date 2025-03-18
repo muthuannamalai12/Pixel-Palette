@@ -163,8 +163,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="text-sm font-medium text-black/60">Email</h4>
-                    <a href="mailto:hello@pixie.co" className="text-lg hover:text-primary transition-colors">
-                      hello@pixie.co
+                    <a href="mailto:hello@pixiepalette.co" className="text-lg hover:text-primary transition-colors">
+                      hello@pixiepalette.co
                     </a>
                   </div>
                 </div>

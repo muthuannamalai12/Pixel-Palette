@@ -63,7 +63,7 @@ const Navbar = () => {
             className="text-xl font-medium tracking-tight text-black animate-fade-in"
             style={{ animationDelay: "0.1s" }}
           >
-            pixie.
+            Pixie Palette
           </a>
 
           {/* Desktop Menu */}

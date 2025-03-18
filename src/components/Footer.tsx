@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 pb-8 border-b border-black/10">
           <div className="mb-8 md:mb-0">
             <a href="#" className="text-2xl font-medium tracking-tight text-black">
-              pixie.
+             Pixel Palette
             </a>
             <p className="mt-2 text-black/60 max-w-xs">
               Creating beautiful digital experiences since 2018
@@ -99,7 +99,7 @@ const Footer = () => {
         
         <div className="flex flex-col md:flex-row justify-between items-center pt-6 border-t border-black/10">
           <p className="text-sm text-black/60 mb-4 md:mb-0">
-            © {new Date().getFullYear()} Pixie. All rights reserved.
+            © {new Date().getFullYear()} Pixie Palette. All rights reserved.
           </p>
           
           <button 
